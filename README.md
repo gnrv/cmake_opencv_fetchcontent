@@ -1,5 +1,5 @@
 # cmake_opencv_fetchcontent
-An example of using FetchContent to use OpenCV in your CMake C++ project
+An example of using FetchContent to include OpenCV in your CMake C++ project
 
 - Install Visual Studio Build Tools 2022
 - Install VS Code
