@@ -1,0 +1,9 @@
+{
+    // We haven't installed OpenCV globally, so we need to add the path
+    // to the OpenCV DLLs to the PATH environment variable.
+    // If you change the cmake.buildDirectory setting from the default
+    // ${workspaceFolder}/build, you will need to update the path below.
+    "cmake.environment": {
+        "PATH":"${workspaceFolder}/build/_deps/opencv-src/build/x64/vc16/bin;${env:PATH}"
+    }
+}
