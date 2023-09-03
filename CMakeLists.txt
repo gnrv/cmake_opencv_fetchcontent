@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 # Fetch and unpack a prebuilt OpenCV 7zip file (disguised as an .exe but CMake knows what to do)
 include(FetchContent)
+set(FETCHCONTENT_QUIET OFF)
 FetchContent_Declare(
         opencv
         URL https://github.com/opencv/opencv/releases/download/4.8.0/opencv-4.8.0-windows.exe
