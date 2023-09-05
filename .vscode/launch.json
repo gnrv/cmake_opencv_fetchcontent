@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(msvc) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            // Resolved by CMake Tools:
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    // Add the directory where our target was built to the PATH.
+                    // It gets resolved by CMake Tools.
+                    // Also add the directory where the OpenCV DLLs are located.
+                    "name": "PATH",
+                    "value": "${env:PATH}:${command:cmake.getLaunchTargetDirectory};${command:cmake.buildDirectory}/_deps/opencv-src/build/x64/vc16/bin;"
+                }
+            ],
+            "sourceFileMap": {
+                // Apparently the OpenCV 4.8 release was built in the below location
+                // on some continuous integration server.
+                // Map that to the location where we have the OpenCV source code.
+                "C:/GHA-OCV-1/_work/ci-gha-workflow/ci-gha-workflow/opencv": "${command:cmake.buildDirectory}/_deps/opencv-src/sources"
+            }
+            // If you have a headless OpenCV program (no GUI) and want to use the external terminal,
+            // uncomment the below line.
+            //, "console": "externalTerminal"
+        }
+    ]
+}
